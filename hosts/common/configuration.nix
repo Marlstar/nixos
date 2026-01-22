@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
 	nix = {
 		settings = {
@@ -69,4 +69,12 @@
 	security.sudo.enable = false;
 	security.sudo-rs.enable = true;
 	security.sudo-rs.wheelNeedsPassword = false;
+
+	home-manager = {
+		extraSpecialArgs = { inherit inputs; };
+		users = {
+			"themarlstar" = import ../../home.nix;
+		};
+	};
+
 }

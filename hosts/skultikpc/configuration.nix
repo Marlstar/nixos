@@ -8,8 +8,10 @@
 	imports =
 	[ # Include the results of the hardware scan.
 		./hardware-configuration.nix
-		../../modules/nixos/user/main-user.nix
+		../../modules
 	];
+
+	filesystems.home-nas.enable = true;
 
 	networking.hostName = "SkultikPC"; # Define your hostname.
 
@@ -25,59 +27,6 @@
 		useXkbConfig = true; # use xkb.options in tty.
 	};
 
-	fileSystems."/mnt/nas/public" = {
-		device = "//172.16.200.10/public";
-		fsType = "cifs";
-		options = [
-			"credentials=/etc/nas-credentials"
-			"x-systemd.automount"
-			"noauto"
-			"uid=1000"
-			"gid=100"
-			"file_mode=0755"
-			"dir_mode=0755"
-		];
-	};
-	fileSystems."/mnt/nas/home" = {
-		device = "//172.16.200.10/home";
-		fsType = "cifs";
-		options = [
-			"credentials=/etc/nas-credentials"
-			"x-systemd.automount"
-			"noauto"
-			"uid=1000"
-			"gid=100"
-			"file_mode=0755"
-			"dir_mode=0755"
-		];
-	};
-	fileSystems."/mnt/nas/photos" = {
-		device = "//172.16.200.10/photos";
-		fsType = "cifs";
-		options = [
-			"credentials=/etc/nas-credentials"
-			"x-systemd.automount"
-			"noauto"
-			"uid=1000"
-			"gid=100"
-			"file_mode=0755"
-			"dir_mode=0755"
-		];
-	};
-	fileSystems."/mnt/nas/music" = {
-		device = "//172.16.200.10/music";
-		fsType = "cifs";
-		options = [
-			"credentials=/etc/nas-credentials"
-			"x-systemd.automount"
-			"noauto"
-			"uid=1000"
-			"gid=100"
-			"file_mode=0755"
-			"dir_mode=0755"
-		];
-	};
-
 	# Enable touchpad support (enabled default in most desktopManager).
 	# services.libinput.enable = true;
 
@@ -85,13 +34,6 @@
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.main.enable = true;
-
-	home-manager = {
-		extraSpecialArgs = { inherit inputs; };
-		users = {
-			"themarlstar" = import ../../home.nix;
-		};
-	};
 
 	environment.sessionVariables = {
 		NIXOS_OZONE_WL = "1";

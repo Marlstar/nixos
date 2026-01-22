@@ -12,6 +12,7 @@
 			groups = lib.mkOption {
 				default = [ "wheel" "input" "uinput" ];
 			};
+			home = "/home/${config.users.main.username}";
 		};
 	};
 
