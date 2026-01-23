@@ -14,6 +14,8 @@
 			url = "github:hyprwm/hyprland-plugins";
 			inputs.hyprland.follows = "hyprland";
 		};
+
+		millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs: let
