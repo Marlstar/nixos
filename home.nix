@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+	imports = [
+		./modules/home
+	];
+
 	home.username = "themarlstar";
 	home.homeDirectory = "/home/themarlstar";
 

@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }: {
+{ lib, inputs, config, pkgs, ... }: {
 	options = {
 		users.main = {
 			enable = lib.mkEnableOption "enable user themarlstar";
@@ -22,6 +22,13 @@
 			extraGroups = config.users.main.groups;
 			home = "/home/${config.users.main.username}";
 			shell = pkgs.fish;
+		};
+
+		home-manager = {
+			extraSpecialArgs = { inherit inputs; };
+			users = {
+				"${config.users.main.username}" = import ../../../home.nix;
+			};
 		};
 	};
 }

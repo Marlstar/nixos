@@ -8,6 +8,12 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		hyprland.url = "github:hyprwm/Hyprland";
+		hyprland-plugins = {
+			url = "github:hyprwm/hyprland-plugins";
+			inputs.hyprland.follows = "hyprland";
+		};
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs: let
@@ -18,6 +24,7 @@
 			modules = [
 				./hosts/common/configuration.nix
 				./hosts/skultikpc/configuration.nix
+				./modules/nixos
 				inputs.home-manager.nixosModules.default
 			];
 		};
