@@ -16,6 +16,16 @@
 		};
 
 		millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+
+		stylix = {
+			url = "github:nix-community/stylix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		tinted-schemes = {
+			flake = false;
+			url = "github:tinted-theming/schemes";
+		};
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs: let
@@ -28,6 +38,7 @@
 				./hosts/skultikpc/configuration.nix
 				./modules/nixos
 				inputs.home-manager.nixosModules.default
+				inputs.stylix.nixosModules.stylix
 			];
 		};
 	};
