@@ -21,12 +21,14 @@ in {
 	home.packages = with pkgs; [
 		hyprcursor
 		sweet-cursor-hyprcursor
+		phinger-cursors
 	];
 
 	home.pointerCursor = {
-		name = "sweet-cursor-hyprcursor";
-		package = sweet-cursor-hyprcursor;
+		name = "phinger-cursors-dark";
+		package = pkgs.phinger-cursors;
 		size = 24;
-		hyprcursor.enable = true;
+		gtk.enable = true;
+		x11.enable = true;
 	};
 }
