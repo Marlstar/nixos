@@ -8,7 +8,6 @@
 			shell = lib.mkOption {
 				default = pkgs.fish;
 			};
-			# groups = lib.mkOptionDefault [ "wheel" "input" "uinput" ];
 			groups = lib.mkOption {
 				default = [ "wheel" "input" "uinput" ];
 			};
@@ -21,7 +20,7 @@
 			isNormalUser = true;
 			extraGroups = config.users.main.groups;
 			home = "/home/${config.users.main.username}";
-			shell = pkgs.fish;
+			shell = config.users.main.shell;
 		};
 
 		home-manager = {

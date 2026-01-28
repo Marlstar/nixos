@@ -48,7 +48,6 @@
 		cifs-utils
 	];
 
-	programs.fish.enable = true;
 	programs.git.enable = true;
 	programs.starship.enable = true;
 	programs.zoxide.enable = true;
