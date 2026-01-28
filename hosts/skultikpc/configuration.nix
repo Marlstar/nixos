@@ -65,13 +65,6 @@
 		enableSSHSupport = true;
 	};
 
-	# List services that you want to enable:
-	services.displayManager.sddm = {
-		enable = true;
-		wayland.enable = true;
-		autoNumlock = true;
-	};
-
 	# Enable the OpenSSH daemon.
 	services.openssh.enable = true;
 
