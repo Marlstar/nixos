@@ -38,7 +38,6 @@
 		bitwarden-desktop
 		discord
 		equicord
-		vicinae
 		killall
 		clang
 		cmake
