@@ -48,7 +48,6 @@
 		cifs-utils
 	];
 
-	programs.git.enable = true;
 	programs.starship.enable = true;
 	programs.zoxide.enable = true;
 	programs.firefox.enable = true;
