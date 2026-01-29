@@ -35,8 +35,6 @@
 		jetbrains-mono
 		vivaldi
 		bitwarden-desktop
-		discord
-		equicord
 		killall
 		clang
 		cmake

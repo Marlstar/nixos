@@ -4,6 +4,8 @@
 		./modules/home
 	];
 
+	nixpkgs.config.allowUnfree = true;
+
 	home.username = "themarlstar";
 	home.homeDirectory = "/home/themarlstar";
 
