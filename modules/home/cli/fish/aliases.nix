@@ -1,6 +1,6 @@
 { ... }: {
 	programs.fish.shellAliases = {
-		ls = "eza --icons -a --group-directories-first";
+		ls = "eza -a";
 		reload = "source ~/.config/fish/config.fish";
 	};
 }

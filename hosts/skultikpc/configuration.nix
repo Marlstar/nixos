@@ -32,7 +32,6 @@
 		wget
 		kitty
 		stow
-		eza
 		jetbrains-mono
 		vivaldi
 		bitwarden-desktop
