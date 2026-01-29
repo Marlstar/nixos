@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ inputs, ... }:
 {
 	imports = [
-		./modules/home
+		(inputs.import-tree ./modules/home)
 	];
 
 	nixpkgs.config.allowUnfree = true;

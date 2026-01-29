@@ -26,6 +26,8 @@
 			flake = false;
 			url = "github:tinted-theming/schemes";
 		};
+
+		import-tree.url = "github:vic/import-tree";
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs: let
@@ -36,7 +38,7 @@
 			modules = [
 				./hosts/common/configuration.nix
 				./hosts/skultikpc/configuration.nix
-				./modules/nixos
+				(inputs.import-tree ./modules/nixos)
 				inputs.home-manager.nixosModules.default
 				inputs.stylix.nixosModules.stylix
 			];
