@@ -15,7 +15,10 @@
 			inputs.hyprland.follows = "hyprland";
 		};
 
-		millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+		millennium = {
+			url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		stylix = {
 			url = "github:nix-community/stylix";
@@ -31,17 +34,17 @@
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs: let
-		nixosSystem = nixpkgs.lib.nixosSystem;
-	in {
-		nixosConfigurations.skultikpc = nixosSystem {
+		mkSystem = name: nixpkgs.lib.nixosSystem {
 			specialArgs = { inherit inputs; };
 			modules = [
 				./hosts/common/configuration.nix
-				./hosts/skultikpc/configuration.nix
+				./hosts/${name}/configuration.nix
 				(inputs.import-tree ./modules/nixos)
 				inputs.home-manager.nixosModules.default
 				inputs.stylix.nixosModules.stylix
 			];
 		};
+	in {
+		nixosConfigurations.skultikpc = mkSystem "skultikpc";
 	};
 }
