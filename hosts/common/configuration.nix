@@ -17,6 +17,10 @@
 			dates = "weekly";
 			options = "--delete-older-than 28d";
 		};
+		optimise = {
+			automatic = true;
+			dates = "2:00";
+		};
 	};
 
 	# Use the systemd-boot EFI boot loader.
