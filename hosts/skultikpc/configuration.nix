@@ -51,7 +51,6 @@
 		cifs-utils
 	];
 
-	programs.zoxide.enable = true;
 	programs.firefox.enable = true;
 	programs.waybar.enable = true;
 
