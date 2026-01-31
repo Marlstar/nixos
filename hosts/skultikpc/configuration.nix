@@ -30,7 +30,6 @@
 		stow
 		jetbrains-mono
 		vivaldi
-		pkill
 		clang
 		cmake
 		llvm
