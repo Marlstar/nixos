@@ -1,5 +1,5 @@
 { ... }: {
 	programs.fish.shellAbbrs = {
-		nixtv = "tv nix-search-tv | wl-copy";
+		nixtv = "tv nix-search-tv";
 	};
 }
