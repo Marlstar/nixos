@@ -51,7 +51,6 @@
 		cifs-utils
 	];
 
-	programs.firefox.enable = true;
 	programs.waybar.enable = true;
 
 	# Open ports in the firewall.
