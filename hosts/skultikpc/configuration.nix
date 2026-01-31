@@ -28,7 +28,6 @@
 		neovim
 		wget
 		stow
-		jetbrains-mono
 		vivaldi
 		clang
 		cmake
