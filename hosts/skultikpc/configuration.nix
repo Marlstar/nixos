@@ -22,7 +22,6 @@
 		neovim
 		wget
 		stow
-		vivaldi
 		clang
 		cmake
 		llvm
