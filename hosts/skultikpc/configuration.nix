@@ -31,7 +31,7 @@
 		jetbrains-mono
 		vivaldi
 		bitwarden-desktop
-		killall
+		pkill
 		clang
 		cmake
 		llvm
