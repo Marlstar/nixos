@@ -49,8 +49,6 @@
 		};
 	};
 
-	services.xserver.videoDrivers = ["nvidia"];
-
 	services.pipewire = {
 		enable = true;
 		pulse.enable = true;
