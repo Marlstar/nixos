@@ -39,8 +39,9 @@
 			modules = [
 				./hosts/common/configuration.nix
 				./hosts/${name}/configuration.nix
-				{ networking.hostName = name; }
 				(inputs.import-tree ./modules/nixos)
+				./modules/unfree.nix
+				{ networking.hostName = name; }
 				inputs.home-manager.nixosModules.default
 				inputs.stylix.nixosModules.stylix
 			];

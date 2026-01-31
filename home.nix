@@ -2,9 +2,8 @@
 {
 	imports = [
 		(inputs.import-tree ./modules/home)
+		./modules/unfree.nix
 	];
-
-	nixpkgs.config.allowUnfree = true;
 
 	home.username = "themarlstar";
 	home.homeDirectory = "/home/themarlstar";
