@@ -14,6 +14,8 @@
 
 	networking.hostName = "skultikpc"; # Define your hostname.
 
+	cfg.hardware.nvidia.enable = true;
+
 	services.libinput.enable = true;
 
 	users.groups.uinput = { };
