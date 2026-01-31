@@ -23,13 +23,6 @@
 		};
 	};
 
-	# Use the systemd-boot EFI boot loader.
-	boot.loader = {
-		systemd-boot.enable = true;
-		efi.canTouchEfiVariables = true;
-		timeout = 0;
-	};
-
 	# Configure network connections interactively with nmcli or nmtui.
 	networking.networkmanager.enable = true;
 
