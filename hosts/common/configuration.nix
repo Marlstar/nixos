@@ -26,10 +26,6 @@
 		timeout = 0;
 	};
 
-	# Use latest kernel.
-	boot.kernelPackages = pkgs.linuxPackages_latest;
-	boot.kernelModules = [ "uinput" ];
-
 	# Configure network connections interactively with nmcli or nmtui.
 	networking.networkmanager.enable = true;
 
