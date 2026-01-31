@@ -5,23 +5,27 @@
 { config, lib, pkgs, inputs, ... }:
 
 {
-	imports =
-	[ # Include the results of the hardware scan.
-		./hardware-configuration.nix
-	];
+	imports = [ ./hardware-configuration.nix ];
 
-	filesystems.home-nas.enable = true;
+	# <== Already modularised ==>
+	cfg = {
+		hardware = {
+			nvidia.enable = true;
+		};
 
-	networking.hostName = "skultikpc"; # Define your hostname.
+		users.main.enable = true;
 
-	cfg.hardware.nvidia.enable = true;
-
+		filesystems = {
+			home-nas.enable = true;
+		};
+	};
+	
+	# <== To-be-modularised/organised ==>
 	services.libinput.enable = true;
 
 	users.groups.uinput = { };
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
-	users.main.enable = true;
 
 	fonts.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono

@@ -14,7 +14,7 @@ mkFilesystem = share: {
 };
 in {
 	options = {
-		filesystems.home-nas = {
+		cfg.filesystems.home-nas = {
 			enable = lib.mkEnableOption "enable home NAS";
 			mounts-base = lib.mkOption {
 				default = "/mnt/nas";
@@ -23,8 +23,8 @@ in {
 	};
 
 	config = let
-		mb = config.filesystems.home-nas.mounts-base;
-	in lib.mkIf config.filesystems.home-nas.enable {
+		mb = config.cfg.filesystems.home-nas.mounts-base;
+	in lib.mkIf config.cfg.filesystems.home-nas.enable {
 		fileSystems."${mb}/public" = mkFilesystem "public";
 		fileSystems."${mb}/home" = mkFilesystem "home";
 		fileSystems."${mb}/photos" = mkFilesystem "photos";

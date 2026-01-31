@@ -1,6 +1,6 @@
 { lib, inputs, config, pkgs, ... }: {
 	options = {
-		users.main = {
+		cfg.users.main = {
 			enable = lib.mkEnableOption "enable user themarlstar";
 			username = lib.mkOption {
 				default = "themarlstar";
@@ -11,22 +11,22 @@
 			groups = lib.mkOption {
 				default = [ "wheel" "input" "uinput" ];
 			};
-			home = "/home/${config.users.main.username}";
+			home = "/home/${config.cfg.users.main.username}";
 		};
 	};
 
-	config = lib.mkIf config.users.main.enable {
-		users.users.${config.users.main.username} = {
+	config = lib.mkIf config.cfg.users.main.enable {
+		users.users.${config.cfg.users.main.username} = {
 			isNormalUser = true;
-			extraGroups = config.users.main.groups;
-			home = "/home/${config.users.main.username}";
-			shell = config.users.main.shell;
+			extraGroups = config.cfg.users.main.groups;
+			home = "/home/${config.cfg.users.main.username}";
+			shell = config.cfg.users.main.shell;
 		};
 
 		home-manager = {
 			extraSpecialArgs = { inherit inputs; };
 			users = {
-				"${config.users.main.username}" = import ../../../home.nix;
+				"${config.cfg.users.main.username}" = import ../../../home.nix;
 			};
 		};
 	};
