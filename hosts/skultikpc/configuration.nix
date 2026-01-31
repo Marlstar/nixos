@@ -30,7 +30,6 @@
 		stow
 		jetbrains-mono
 		vivaldi
-		bitwarden-desktop
 		pkill
 		clang
 		cmake
