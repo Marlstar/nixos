@@ -27,7 +27,6 @@
 		vim
 		neovim
 		wget
-		kitty
 		stow
 		jetbrains-mono
 		vivaldi
