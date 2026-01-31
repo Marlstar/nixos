@@ -21,12 +21,6 @@
 	};
 	
 	# <== To-be-modularised/organised ==>
-	services.libinput.enable = true;
-
-	users.groups.uinput = { };
-
-	# Define a user account. Don't forget to set a password with ‘passwd’.
-
 	fonts.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono
 	];
