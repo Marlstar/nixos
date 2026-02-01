@@ -26,11 +26,5 @@
 	# Configure network connections interactively with nmcli or nmtui.
 	networking.networkmanager.enable = true;
 
-	console = {
-		#   font = "Lat2-Terminus16";
-		#   keyMap = "us";
-		useXkbConfig = true; # use xkb.options in tty.
-	};
-
 	programs.appimage.enable = true;
 }
