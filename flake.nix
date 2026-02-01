@@ -37,7 +37,6 @@
 		mkSystem = name: nixpkgs.lib.nixosSystem {
 			specialArgs = { inherit inputs; };
 			modules = [
-				./hosts/common/configuration.nix
 				./hosts/${name}/configuration.nix
 				(inputs.import-tree ./modules/nixos)
 				./modules/unfree.nix
