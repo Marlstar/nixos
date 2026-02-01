@@ -22,6 +22,4 @@
 			dates = "2:00";
 		};
 	};
-
-	programs.appimage.enable = true;
 }
