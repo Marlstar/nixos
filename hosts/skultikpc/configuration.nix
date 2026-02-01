@@ -21,7 +21,6 @@
 		wget
 		stow
 		rustup
-		cifs-utils
 	];
 
 	# DO NOT CHANGE THIS, LIKE, EVER!!!
