@@ -26,15 +26,6 @@
 	# Configure network connections interactively with nmcli or nmtui.
 	networking.networkmanager.enable = true;
 
-	# Set your time zone.
-	time.timeZone = "Australia/Brisbane";
-
-	# Configure network proxy if necessary
-	# networking.proxy.default = "http://user:password@proxy:port/";
-	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-	# Select internationalisation properties.
-	i18n.defaultLocale = "en_AU.UTF-8";
 	console = {
 		#   font = "Lat2-Terminus16";
 		#   keyMap = "us";
