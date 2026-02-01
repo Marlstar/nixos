@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 	programs.vicinae = {
 		enable = true;
 		systemd.enable = true;
@@ -20,4 +20,11 @@
 			];
 		};
 	};
+
+	home.packages = [
+		# Use vicinae as dmenu
+		(pkgs.writeShellScriptBin "dmenu" ''
+		exec vicinae dmenu "$@"
+		'')
+	];
 }
