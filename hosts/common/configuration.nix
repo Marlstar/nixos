@@ -41,13 +41,5 @@
 		useXkbConfig = true; # use xkb.options in tty.
 	};
 
-	hardware = {
-		uinput.enable = true;
-		graphics = {
-			enable = true;
-			enable32Bit = true;
-		};
-	};
-
 	programs.appimage.enable = true;
 }
