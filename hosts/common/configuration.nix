@@ -49,10 +49,5 @@
 		};
 	};
 
-	services.pipewire = {
-		enable = true;
-		pulse.enable = true;
-	};
-
 	programs.appimage.enable = true;
 }
