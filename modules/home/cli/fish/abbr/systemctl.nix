@@ -1,6 +1,6 @@
 { ... }: {
 	programs.fish.shellAbbrs = {
 		sc = "sudo systemctl";
-		scu = "sudo systemctl --user";
+		scu = "systemctl --user";
 	};
 }
