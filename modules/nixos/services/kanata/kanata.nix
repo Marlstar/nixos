@@ -10,7 +10,7 @@
 		wantedBy = ["multi-user.target"];
 		serviceConfig = {
 			Type = "simple";
-			ExecStart = "${pkgs.kanata}/bin/kanata -c /etc/kanata/config.kbd";
+			ExecStart = "${pkgs.kanata}/bin/kanata -c /etc/kanata/config.kbd --nodelay";
 			Restart = "on-failure";
 			SupplementaryGroups = [ "input" "uinput" ];
 		};
