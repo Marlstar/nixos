@@ -10,6 +10,7 @@
 			margin = 200;
 			button-aspect-ratio = "1/1";
 			show-keybinds = true;
+			no-version-info = true;
 			buttons = [
 				{
 					label = "lock";
