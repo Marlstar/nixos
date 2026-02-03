@@ -4,7 +4,7 @@ deus-ex = pkgs.adi1090x-plymouth-themes.override {
 };
 in {
 	boot.plymouth = {
-		enable = true;
+		enable = false;
 		theme = lib.mkForce "deus_ex";
 		themePackages = [ deus-ex ];
 	};
