@@ -12,6 +12,16 @@
 		filesystems = {
 			home-nas.enable = true;
 		};
+
+		games = {
+			enable = true;
+			steam.enable = true;
+			epic.enable = true;
+			minecraft = {
+				enable = true;
+				clients.lunar = true;
+			};
+		};
 	};
 	
 	# <== To-be-modularised/organised ==>

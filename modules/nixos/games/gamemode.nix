@@ -1,15 +1,17 @@
-{ pkgs, ... }: {
-	programs.gamemode = {
-		enable = true;
-		settings = {
-			custom = {
-				start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-				end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+{ pkgs, lib, config, ... }: {
+	config = lib.mkIf config.cfg.games.enable {
+		programs.gamemode = {
+			enable = true;
+			settings = {
+				custom = {
+					start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+					end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+				};
 			};
 		};
-	};
 
-	environment.systemPackages = with pkgs; [
-		libnotify
-	];
+		environment.systemPackages = with pkgs; [
+			libnotify
+		];
+	};
 }
