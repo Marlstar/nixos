@@ -22,6 +22,9 @@
 			merge = {
 				conflictStyle = "zdiff3";
 			};
+			alias = {
+				lg = "log --graph --pretty=format:'%Cred%h%d %Cgreen%ar %Cblue[%an]  %Creset%s'";
+			};
 		};
 		signing = {
 			signByDefault = true;
