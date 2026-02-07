@@ -2,7 +2,7 @@
 	programs.gh = {
 		enable = true;
 		settings = {
-			git_protocol = "https"; # or "ssh"
+			git_protocol = "ssh";
 		};
 	};
 }
