@@ -31,7 +31,7 @@
       options = [ "subvol=@nix" ];
     };
 
-  fileSystems."/efi" =
+  fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/6425-CCDD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
