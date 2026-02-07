@@ -5,7 +5,7 @@ equicord-upd = (pkgs.equicord.overrideAttrs (oldAttrs: {
 		owner = "Equicord";
 		repo = "Equicord";
 		tag = "2026-01-25";
-		hash = "sha256-z6gyh7dNoUz3wVIC1hmpG2SYstgImRQ9CjgqU/iU4do=";
+		hash = "sha256-v1WVQJrCfxzQR388RE4G1nJTAEW1ltmLnlFOjdyfIvY=";
 	};
 }));
 in {

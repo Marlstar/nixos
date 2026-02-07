@@ -47,5 +47,6 @@
 		};
 	in {
 		nixosConfigurations.skultikpc = mkSystem "skultikpc";
+		nixosConfigurations.skultik = mkSystem "skultik";
 	};
 }
