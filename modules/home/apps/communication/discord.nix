@@ -4,8 +4,8 @@ equicord-upd = (pkgs.equicord.overrideAttrs (oldAttrs: {
 	src = pkgs.fetchFromGitHub {
 		owner = "Equicord";
 		repo = "Equicord";
-		tag = "2026-01-25";
-		hash = "sha256-v1WVQJrCfxzQR388RE4G1nJTAEW1ltmLnlFOjdyfIvY=";
+		tag = "2026-02-08";
+		hash = "sha256-uk4kF6i00jAnHQ8ldjTjO4zv0S+OmMZ5zOqfRb8XWS8=";
 	};
 }));
 in {
@@ -13,11 +13,12 @@ in {
 		enable = true;
 		settings = {
 			SKIP_HOST_UPDATE = true;
+			DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING = true;
 		};
 		package = (pkgs.discord.override {
 			withEquicord = true;
 			equicord = equicord-upd;
-			withOpenASAR = true;
+			# withOpenASAR = true;
 			disableUpdates = false; # home-manager does this
 		});
 	};
