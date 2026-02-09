@@ -9,6 +9,8 @@
 	    home-nas.enable = true;
 	};
 
+	bluetooth.enable = true;
+
 	games = {
 	    enable = true;
 	    steam.enable = true;
