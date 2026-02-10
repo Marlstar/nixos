@@ -3,34 +3,36 @@
 
     # <== Already modularised ==>
     cfg = {
-	users.main.enable = true;
+		hardware.intel-graphics.enable = true;
 
-	filesystems = {
-	    home-nas.enable = true;
+		users.main.enable = true;
+
+		filesystems = {
+			home-nas.enable = true;
+		};
+
+		bluetooth.enable = true;
+
+		games = {
+			enable = true;
+			steam.enable = true;
+			epic.enable = true;
+			minecraft = {
+				enable = true;
+				clients.lunar = true;
+			};
+		};
 	};
 
-	bluetooth.enable = true;
+	# <== To-be-modularised/organised ==>
+	environment.systemPackages = with pkgs; [
+		vim
+		neovim
+		wget
+		stow
+		rustup
+	];
 
-	games = {
-	    enable = true;
-	    steam.enable = true;
-	    epic.enable = true;
-	    minecraft = {
-		enable = true;
-		clients.lunar = true;
-	    };
-	};
-    };
-
-    # <== To-be-modularised/organised ==>
-    environment.systemPackages = with pkgs; [
-	vim
-	    neovim
-	    wget
-	    stow
-	    rustup
-    ];
-
-    # DO NOT CHANGE THIS, LIKE, EVER!!!
-    system.stateVersion = "25.11";
+	# DO NOT CHANGE THIS, LIKE, EVER!!!
+	system.stateVersion = "25.11";
 }
