@@ -1,7 +1,7 @@
 { config, lib, ... }: {
 	options.cfg.bluetooth = {
 		enable = lib.mkEnableOption "enable bluetooth";
-		blueman.enable = lib.mkOption { default = true; };
+		blueman.enable = lib.mkOption { default = false; };
 	};
 
 	config = lib.mkIf config.cfg.bluetooth.enable {
