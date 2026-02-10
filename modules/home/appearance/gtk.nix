@@ -5,18 +5,14 @@
 
 	gtk = {
 		enable = true;
-	# 	colorScheme = "dark";
-	# 	theme = {
-	# 		name = "Catppuccin-Mauve-Dark";
-	# 		package = pkgs.magnetic-catppuccin-gtk;
-	# 	};
+		colorScheme = "dark";
 		iconTheme = {
 			name = "candy-icons";
 			package = pkgs.candy-icons;
 		};
-	# 	gtk3 = {
-	# 		extraConfig.gtk-application-prefer-dark-theme = true;
-	# 	};
+		gtk3 = {
+			extraConfig.gtk-application-prefer-dark-theme = true;
+		};
 	};
 
 	dconf.settings = {
