@@ -4,7 +4,7 @@
 		settings = {
 			add_newline = true;
 			aws = {
-				format = "[$symbol($profile)(($region))([$duration])]($style) ";
+				format = "[$symbol($profile)(\\($region\\))([$duration])]($style) ";
 				symbol = "  ";
 			};
 			bun = {
