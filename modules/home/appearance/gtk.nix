@@ -1,7 +1,6 @@
 { pkgs, ... }: {
 	home.packages = with pkgs; [
 		dconf
-		magnetic-catppuccin-gtk
 	];
 
 	gtk = {
@@ -11,13 +10,10 @@
 	# 		name = "Catppuccin-Mauve-Dark";
 	# 		package = pkgs.magnetic-catppuccin-gtk;
 	# 	};
-	# 	iconTheme = {
-	# 		name = "Papirus-Dark";
-	# 		package = pkgs.catppuccin-papirus-folders.override {
-	# 			flavor = "mocha";
-	# 			accent = "mauve";
-	# 		};
-	# 	};
+		iconTheme = {
+			name = "candy-icons";
+			package = pkgs.candy-icons;
+		};
 	# 	gtk3 = {
 	# 		extraConfig.gtk-application-prefer-dark-theme = true;
 	# 	};
