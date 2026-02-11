@@ -29,7 +29,7 @@
 					action = [
 						{
 							"$DESKTOP_SESSION" = "hyprland";
-							shell = "hyprctl dispatch exit";
+							shell = "hyprshutdown";
 						}
 					];
 					text = "Logout";
