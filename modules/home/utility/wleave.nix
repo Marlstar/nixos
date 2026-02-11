@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ pkgs, ... }: {
 	programs.wleave = {
 		enable = true;
 		settings = {
@@ -17,41 +17,49 @@
 					action = "hyprlock";
 					text = "Lock";
 					keybind = "l";
+					icon = "${pkgs.wleave}/share/wleave/icons/lock.svg";
 				}
 				{
 					label = "hibernate";
 					action = "systemctl hibernate";
 					text = "Hibernate";
 					keybind = "h";
+					icon = "${pkgs.wleave}/share/wleave/icons/hibernate.svg";
 				}
 				{
 					label = "logout";
-					action = [
-						{
-							"$DESKTOP_SESSION" = "hyprland";
-							shell = "hyprshutdown";
-						}
-					];
+					action = "hyprshutdown";
+					# TODO: use this format once nixpkgs updates wleave
+					# action = [
+					# 	{
+					# 		"$DESKTOP_SESSION" = "hyprland";
+					# 		shell = "hyprshutdown";
+					# 	}
+					# ];
 					text = "Logout";
 					keybind = "e";
+					icon = "${pkgs.wleave}/share/wleave/icons/logout.svg";
 				}
 				{
 					label = "shutdown";
 					action = "systemctl poweroff";
 					text = "Shutdown";
 					keybind = "x";
+					icon = "${pkgs.wleave}/share/wleave/icons/shutdown.svg";
 				}
 				{
 					label = "suspend";
 					action = "systemctl suspend";
 					text = "Suspend";
 					keybind = "s";
+					icon = "${pkgs.wleave}/share/wleave/icons/suspend.svg";
 				}
 				{
 					label = "reboot";
 					action = "systemctl reboot";
 					text = "Reboot";
 					keybind = "r";
+					icon = "${pkgs.wleave}/share/wleave/icons/reboot.svg";
 				}
 			];
 		};
