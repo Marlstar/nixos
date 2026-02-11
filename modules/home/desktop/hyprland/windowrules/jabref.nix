@@ -1,0 +1,10 @@
+{ ... }: {
+	wayland.windowManager.hyprland.settings = {
+		windowrule = [{
+			name = "JabRef Popups";
+			"match:class" = "(.*)(JabRefGUI)(.*)";
+			"match:title" = "()";
+			no_initial_focus = "on";
+		}];
+	};
+}

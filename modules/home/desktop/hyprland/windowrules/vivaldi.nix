@@ -1,0 +1,12 @@
+{ ... }: {
+	wayland.windowManager.hyprland.settings = {
+		windowrule = [{
+			name = "Vivaldi Settings Window";
+			"match:title" = "(Vivaldi Settings)(.*)";
+
+			float = "on";
+			size = "1400 900";
+			center = "on";
+		}];
+	};
+}
