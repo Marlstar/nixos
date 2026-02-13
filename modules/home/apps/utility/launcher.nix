@@ -5,6 +5,7 @@
 		# Get options from `vicinae config default`
 		settings = {
 			escape_key_behaviour = "close_window";
+			close_on_focus_loss = true;
 			pop_to_root_on_close = true;
 
 			# theme is managed by stylix
