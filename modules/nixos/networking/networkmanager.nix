@@ -5,4 +5,6 @@
 			networkmanager-openconnect
 		];
 	};
+
+	cfg.users.main.groups = [ "networkmanager" ];
 }
