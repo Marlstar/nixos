@@ -12,6 +12,10 @@ in {
 				badlion = lib.mkEnableOption "enable Badlion Client";
 				lunar = lib.mkEnableOption "enable Lunar Client";
 			};
+
+			cubelify.enable = lib.mkOption {
+				default = true;
+			};
 		};
 	};
 
@@ -29,6 +33,7 @@ in {
 		]
 		++ lib.optional minecraft.clients.badlion badlion-client
 		++ lib.optional minecraft.clients.lunar lunar-client-package
+		++ lib.optional minecraft.cubelify.enable cubelify
 		;
 
 		# For hosting servers
