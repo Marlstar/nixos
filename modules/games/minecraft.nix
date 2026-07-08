@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }: let
+{ home, pkgs, lib, config, inputs, ... }: let
 minecraft = config.cfg.games.minecraft;
 lunar-client-package = inputs.lunar-client.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
@@ -9,7 +9,6 @@ in {
 			};
 			
 			clients = {
-				badlion = lib.mkEnableOption "enable Badlion Client";
 				lunar = lib.mkEnableOption "enable Lunar Client";
 			};
 
@@ -19,27 +18,30 @@ in {
 		};
 	};
 
-	config = lib.mkIf minecraft.enable {
-		environment.systemPackages = with pkgs; [
-			(prismlauncher.override {
-				additionalPrograms = [ ffmpeg ];
-				jdks = [
-					graalvmPackages.graalvm-ce
-					zulu8
-					zulu17
-					zulu
-				];
-			})
-		]
-		++ lib.optional minecraft.clients.badlion badlion-client
-		++ lib.optional minecraft.clients.lunar lunar-client-package
-		++ lib.optional minecraft.cubelify.enable cubelify
-		;
-
+	config = lib.mkIf minecraft.enable ({
 		# For hosting servers
 		networking.firewall = {
 			allowedTCPPorts = [ 25565 25575 ]; # Java
 			allowedUDPPortRanges = [{ from=19132; to=19132; }]; # Bedrock
 		};
-	};
+	}
+	// home {
+		programs.prismlauncher = {
+			enable = true;
+			package = (pkgs.prismlauncher.override {
+				additionalPrograms = with pkgs; [ ffmpeg ];
+				jdks = with pkgs; [
+					graalvmPackages.graalvm-ce
+					zulu8
+					zulu17
+					zulu
+				];
+			});
+		};
+
+		home.packages = with pkgs; []
+		++ lib.optional minecraft.clients.lunar lunar-client-package
+		++ lib.optional minecraft.cubelify.enable cubelify
+		;
+	});
 }
