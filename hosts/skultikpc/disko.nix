@@ -1,4 +1,6 @@
-{ ... }: {
+{ ... }: let
+btrfs-mount-options = [ "relatime" "ssd" "discard=async" "space_cache=v2" "compress=zstd" ];
+in {
 	disko.devices = {
 		disk.nvme = {
 			type = "disk";
@@ -27,23 +29,23 @@
 							subvolumes = {
 								"@" = {
 									mountpoint = "/";
-									mountOptions = [ "relatime" "ssd" "discard=async" "space_cache=v2" "compress=zstd" ];
+									mountOptions = btrfs-mount-options;
 								};
 								"@home" = {
 									mountpoint = "/home";
-									mountOptions = [ "relatime" "ssd" "discard=async" "space_cache=v2" "compress=zstd" ];
+									mountOptions = btrfs-mount-options;
 								};
 								"@var" = {
 									mountpoint = "/var";
-									mountOptions = [ "relatime" "ssd" "discard=async" "space_cache=v2" "compress=zstd" ];
+									mountOptions = btrfs-mount-options;
 								};
 								"@tmp" = {
 									mountpoint = "/tmp";
-									mountOptions = [ "relatime" "ssd" "discard=async" "space_cache=v2" "compress=zstd" ];
+									mountOptions = btrfs-mount-options;
 								};
 								"@nix" = {
 									mountpoint = "/nix";
-									mountOptions = [ "relatime" "ssd" "discard=async" "space_cache=v2" "compress=zstd" ];
+									mountOptions = btrfs-mount-options;
 								};
 							};
 						};
@@ -55,6 +57,29 @@
 							type = "swap";
 							discardPolicy = "both";
 							extraArgs = [ "-L" "NIXSWAP" ];
+						};
+					};
+				};
+			};
+		};
+
+		# CT1000BX500SSD1 | 1TB
+		disk.ssd1 = {
+			type = "disk";
+			device = "/dev/disk/by-id/ata-CT1000BX500SSD1_2522E9C1028D";
+			content = {
+				type = "gpt";
+				partitions.main = {
+					priority = 1;
+					size = "100%";
+					content = {
+						type = "btrfs";
+						extraArgs = [ "-L" "GAMES" ];
+						subvolumes = {
+							"@games" = {
+								mountpoint = "/mnt/games";
+								mountOptions = btrfs-mount-options;
+							};
 						};
 					};
 				};
