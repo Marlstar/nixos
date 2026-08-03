@@ -129,7 +129,7 @@
 				(nixpkgs.lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "skultix" ])
 
 				(inputs.import-tree ./modules)
-				(inputs.import-tree.match "\\(?!secrets\.nix\\)" ./secrets)
+				(inputs.import-tree.match "\\(?!secrets\\.nix\\)" ./secrets)
 				inputs.agenix.nixosModules.default
 				inputs.eh.nixosModules.default
 				inputs.flatpak.nixosModules.nix-flatpak

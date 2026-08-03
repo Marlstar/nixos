@@ -37,7 +37,7 @@
 				open-fullscreen = false;
 			}
 			{ # Notifications - open in corner non-focused
-				matches = [{ app-id = "steam"; title = "^notificationtoasts_\d+_desktop$"; }];
+				matches = [{ app-id = "steam"; title = "^notificationtoasts_\\d+_desktop$"; }];
 				open-focused = false;
 				default-floating-position = {
 					x = 10;
