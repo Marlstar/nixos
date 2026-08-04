@@ -17,13 +17,14 @@ in lib.mkMerge [
 		nix.buildMachines = [{
 			hostName = "skultikpc-nix-builder";
 			systems = [ "x86_64-linux" ];
-			maxJobs = 8;
 			speedFactor = 4;
-			publicHostKey = config.identities.skultikpc.ssh-pubkey;
+			publicHostKey = null; # verified via programs.ssh.knownHosts below; can't use buildMachines as the ssh alias rewrites HostName
 			sshKey = private-key;
 			protocol = "ssh-ng";
 			supportedFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
 		}];
+
+		programs.ssh.knownHosts.skultikpc.publicKey = config.identities.skultikpc.ssh-pubkey;
 
 		programs.ssh.extraConfig = ''
 		Host skultikpc-nix-builder
