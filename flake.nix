@@ -47,11 +47,6 @@
 
 		flatpak.url = "github:gmodena/nix-flatpak";
 
-		handy = {
-			url = "github:cjpais/Handy";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
 		livesplit-one = {
 			url = "github:skultix/livesplit-one-flake";
 			inputs.nixpkgs.follows = "nixpkgs";
