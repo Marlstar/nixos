@@ -29,4 +29,6 @@
 		systemd.enable = true;
 		settings = builtins.fromTOML (builtins.readFile ./noctalia.toml);
 	};
+
+	stylix.targets.noctalia.enable = false;
 }
