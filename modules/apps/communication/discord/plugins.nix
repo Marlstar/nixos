@@ -62,7 +62,6 @@
 		fakeNitro.enable = true;
 		fakeProfileThemes.enable = true;
 		favoriteEmojiFirst.enable = true;
-		favoriteGifSearch.enable = true;
 		findReply.enable = true;
 		fixCodeblockGap.enable = true;
 		fixFileExtensions.enable = true;
@@ -83,7 +82,6 @@
 		inRole.enable = true;
 		inviteDefaults.enable = true;
 		keywordNotify.enable = true;
-		lastFmRichPresence.enable = false;
 		loadingQuotes.enable = true;
 		memberCount.enable = true;
 		mentionAvatars.enable = true;
@@ -183,7 +181,6 @@
 		serverListIndicators.enable = true;
 		shikiCodeblocks = {
 			enable = true;
-			theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/bc5436518111d87ea58eb56d97b3f9bec30e6b83/packages/tm-themes/themes/tokyo-night.json";
 			useDevIcon = "COLOR";
 		};
 		showAllMessageButtons.enable = true;
@@ -227,7 +224,7 @@
 		};
 		timezones = {
 			enable = true;
-			_24hTime = true;
+			twentyFourHourFormat = true;
 			askedTimezone = true;
 			showMessageHeaderTime = false;
 		};
@@ -242,9 +239,6 @@
 		usrbg.enable = false;
 		validReply.enable = true;
 		validUser.enable = true;
-		vcNarratorCustom = {
-			customVoice = "en_au_001";
-		};
 		voiceChatUtilities.enable = true;
 		voiceDownload.enable = true;
 		voiceMessages.enable = true;
