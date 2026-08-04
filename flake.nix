@@ -99,6 +99,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		voxtype.url = "github:peteonrails/voxtype/v0.7.5";
+
 		import-tree.url = "github:vic/import-tree";
 	};
 
