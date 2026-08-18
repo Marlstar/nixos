@@ -25,5 +25,7 @@
 		};
 	};
 
+	services.thermald.enable = true;
+	services.power-profiles-daemon.enable = true;
 	system.stateVersion = "26.05";
 }
