@@ -18,6 +18,7 @@ in lib.mkMerge [
 			hostName = "skultikpc-nix-builder";
 			systems = [ "x86_64-linux" ];
 			speedFactor = 4;
+			maxJobs = 64;
 			publicHostKey = null; # verified via programs.ssh.knownHosts below; can't use buildMachines as the ssh alias rewrites HostName
 			sshKey = private-key;
 			protocol = "ssh-ng";

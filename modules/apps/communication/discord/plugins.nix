@@ -32,9 +32,6 @@
 		betterUploadButton.enable = true;
 		bypassPinPrompt.enable = true;
 		callTimer.enable = true;
-		channelTabs = {
-			noPomeloNames = true;
-		};
 		clearUrls.enable = true;
 		clickableRoles.enable = true;
 		commandPalette = {

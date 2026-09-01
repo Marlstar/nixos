@@ -1,9 +1,7 @@
-{ home, pkgs, ... }: let
-proton-ge-version = pkgs.proton-ge-bin.version;
-in home {
+{ home, ... }: home {
 	programs.steam.config = {
 		enable = true;
-		closeSteam = true;
-		defaultCompatTool = proton-ge-version;
+		onSteamRunning = "close";
+		defaultCompatTool = "GE-Proton";
 	};
 }
